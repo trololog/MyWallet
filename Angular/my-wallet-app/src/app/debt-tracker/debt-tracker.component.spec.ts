@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuComponentComponent } from './menu-component.component';
+import { DebtTrackerComponent } from './debt-tracker.component';
 
-describe('MenuComponentComponent', () => {
-  let component: MenuComponentComponent;
-  let fixture: ComponentFixture<MenuComponentComponent>;
+describe('DebtTrackerComponent', () => {
+  let component: DebtTrackerComponent;
+  let fixture: ComponentFixture<DebtTrackerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuComponentComponent ]
+      declarations: [ DebtTrackerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuComponentComponent);
+    fixture = TestBed.createComponent(DebtTrackerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
