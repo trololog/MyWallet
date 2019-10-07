@@ -9,6 +9,7 @@ import { SavingsTrackerComponent } from './savings-tracker/savings-tracker.compo
 import { TransactionComponent } from './transaction/transaction.component';
 import { MasterDataComponent } from './master-data/master-data.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     MenuComponent,
     SavingsTrackerComponent,
     TransactionComponent,
-    MasterDataComponent
+    MasterDataComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
