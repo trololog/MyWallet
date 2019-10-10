@@ -6,8 +6,13 @@
                 <span>My Wallet</span>
             </a>
         </h1>
+        <div class="menu-button">
+            <a (click)="openMenu()">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
     </header>
-    <nav>
+    <nav class="menu-list" [ngClass]="menuClass">
         <ul>
             <li>
                 <a [routerLink]="['/dashboard']">
@@ -47,4 +52,3 @@
         </ul>
     </nav>
 </div>
-
