@@ -15,35 +15,35 @@
     <nav class="menu-list" [ngClass]="menuClass">
         <ul>
             <li>
-                <a [routerLink]="['/dashboard']">
+                <a (click)="hideMenu()" [routerLink]="['/dashboard']">
                     <i class="fas fa-chart-line"></i>
                     <span>Dashboard</span>
                     <i class="fas fa-chevron-right arrow"></i>
                 </a>
             </li>
             <li>
-                <a [routerLink]="['/transaction']">
+                <a (click)="hideMenu()" [routerLink]="['/transaction']">
                     <i class="fas fa-calculator"></i>
                     <span>Transactions</span>
                     <i class="fas fa-chevron-right arrow"></i>
                 </a>
             </li>
             <li>
-                <a [routerLink]="['/savings']">
+                <a (click)="hideMenu()" [routerLink]="['/savings']">
                     <i class="fas fa-university"></i>
                     <span>Savings Tracker</span>
                     <i class="fas fa-chevron-right arrow"></i>
                 </a>
             </li>
             <li>
-                <a [routerLink]="['/debts']">
+                <a (click)="hideMenu()" [routerLink]="['/debts']">
                     <i class="fas fa-calendar-week"></i>
                     <span>Debt Tracker</span>
                     <i class="fas fa-chevron-right arrow"></i>
                 </a>
             </li>
             <li>
-                <a [routerLink]="['/master']">
+                <a (click)="hideMenu()" [routerLink]="['/master']">
                     <i class="fas fa-database"></i>
                     <span>Master Data</span>
                     <i class="fas fa-chevron-right arrow"></i>

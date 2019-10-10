@@ -2,8 +2,38 @@
 @import "scss/fontawesome.scss";
 @import "scss/solid.scss";
 
+$card-header-font-color: #333748;
+
+html, body {
+    min-height: 100%;
+    height:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding:0;
+    margin: 0;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
-        margin:0;
-        padding:0;
+    margin:0;
+    padding:0;
 }
+
+.card-container {
+    background-color:#ffffff;
+    box-sizing: border-box;
+    width: 100%;
+    height:100%;
+    border-radius:15px;
+    border-top: 1px solid #eeedf0;
+    border-left: 2px solid #e9e8eb;
+    border-bottom:3px solid #d6d8d7;
+    border-right: 3px solid #f1f3f4;
+    padding:20px;
+
+    h2 {
+        color: $card-header-font-color;
+    }
+}
+

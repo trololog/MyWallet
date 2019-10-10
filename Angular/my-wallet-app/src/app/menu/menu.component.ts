@@ -23,4 +23,9 @@ export class MenuComponent implements OnInit {
 
     this.menuOpened = !this.menuOpened;
   }
+
+  hideMenu() {
+    this.menuClass = 'menu-hidden';
+    this.menuOpened = false;
+  }
 }

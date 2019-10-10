@@ -8,7 +8,6 @@ header {
 @media screen and (min-width: 640px) {
     .menu-list {
         display: inline-block;
-        height:100%;
         width: 100%;
     }
 
@@ -98,6 +97,7 @@ header {
     width: 100%;
     background-color: #0099ff;
     height:60px;
+    color:#ffffff;
 
     h1 {
         padding-top:10px;
