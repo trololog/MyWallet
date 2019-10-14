@@ -37,3 +37,25 @@ body {
     }
 }
 
+.form-container {
+    padding-top:10px;
+}
+
+.drop-down {
+    border:0;
+    border-bottom: 1px solid #edecef;
+    padding-bottom: 12px;
+    padding-right:15px;
+    padding-top:15px;
+    font-size:12px;
+    font-weight: bold;
+}
+
+.form-header {
+    text-transform: uppercase;
+}
+
+.row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

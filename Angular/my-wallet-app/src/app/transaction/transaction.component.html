@@ -1,3 +1,15 @@
 <div class="card-container">
     <h2>Monthly Transactions</h2>
+    <div class="form-container">
+        <div class="row header">
+            <h3 class="form-header">total balance</h3>
+            <span>{{}}</span>
+        </div>
+        <div class="row">
+            <select class="drop-down" name="" id="">
+                <option value="" disabled>Choose type</option>
+                <option *ngFor="let type of transactionTypes" [ngValue]="type.id">{{type.name}}</option>
+            </select>
+        </div>
+    </div>
 </div>
