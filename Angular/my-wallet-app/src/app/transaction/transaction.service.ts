@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { TransactionType } from './transaction-type.model';
 
 export class TransactionService {
@@ -7,12 +6,12 @@ export class TransactionService {
     getTransactionTypes() {
         this.transactionType.push(
             {
-                id: 1,
-                name: "Income",
+                code: "1",
+                value: "Income",
             },
             {
-                id:2,
-                name: "Outcome"
+                code: "2",
+                value: "Outcome"
             });
 
         console.log(this.transactionType);
