@@ -1,15 +1,22 @@
 import { Transaction } from './transaction.model';
 
 export class Balance {
-    private balance: number;
+    private total: number;
     private transactions: Transaction[]
 
     constructor() {
-        this.balance = 0;
+        this.total = 0;
         this.transactions = [];
     }
 
     addTransaction(transaction: Transaction) {
         this.transactions.push(transaction);
+        this.transactions.forEach(t=> {
+            this.total += t.amount;
+        });
+    }
+
+    getTotal() {
+        return this.total;
     }
 }

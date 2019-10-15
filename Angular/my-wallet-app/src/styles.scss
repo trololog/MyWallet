@@ -43,13 +43,23 @@ body {
 
 .drop-down {
     border:0;
-    border-bottom: 1px solid #edecef;
     padding-bottom: 12px;
     padding-right:15px;
     padding-top:15px;
     font-size:12px;
     font-weight: bold;
+
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
 }
+
+.select-container {
+    border-bottom: 1px solid #edecef;
+    display: inline-block;
+   
+}
+
 
 .form-header {
     text-transform: uppercase;

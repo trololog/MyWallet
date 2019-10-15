@@ -1,0 +1,7 @@
+<div class="select-container">
+    <select class="drop-down" name="" id="">
+        <option value="" disabled>Choose type</option>
+        <option *ngFor="let type of transactionTypes" [ngValue]="type.id">{{type.name}}</option>
+    </select>
+    <i class="fas fa-sort-down"></i>
+</div>

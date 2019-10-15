@@ -3,13 +3,16 @@
     <div class="form-container">
         <div class="row header">
             <h3 class="form-header">total balance</h3>
-            <span>{{}}</span>
+            <span>{{ balance.getTotal() }}</span>
         </div>
         <div class="row">
-            <select class="drop-down" name="" id="">
-                <option value="" disabled>Choose type</option>
-                <option *ngFor="let type of transactionTypes" [ngValue]="type.id">{{type.name}}</option>
-            </select>
+            <div class="select-container">
+                <select class="drop-down" name="" id="">
+                    <option value="" disabled>Choose type</option>
+                    <option *ngFor="let type of transactionTypes" [ngValue]="type.id">{{type.name}}</option>
+                </select>
+                <i class="fas fa-sort-down"></i>
+            </div>
         </div>
     </div>
 </div>
