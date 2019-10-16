@@ -6,8 +6,11 @@
             <span>{{ balance.getTotal() }}</span>
         </div>
         <div class="row">
-            <app-dropdown [collectionItems]="transactionTypes" formControlName="transactionType">
-            </app-dropdown>
+            <form [formGroup]="transactionForm">
+                <app-dropdown [collectionItems]="transactionTypes" formControlName="type">
+                </app-dropdown>
+                <input type="text" formControlName="concept">
+            </form>
         </div>
     </div>
 </div>

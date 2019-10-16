@@ -13,9 +13,7 @@ export class TransactionService {
                 code: "2",
                 value: "Outcome"
             });
-
-        console.log(this.transactionType);
-
+            
         return this.transactionType;
     }
 }

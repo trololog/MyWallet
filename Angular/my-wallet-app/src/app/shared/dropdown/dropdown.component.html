@@ -1,7 +1,7 @@
 <div class="select-container">
-    <select class="drop-down">
+    <select #dropdown class="drop-down" [disabled]="isDisabled" (change)="selectItem(dropdown.value)">
         <option value="" disabled>Choose type</option>
-        <option *ngFor="let item of collectionItems" [ngValue]="item.code">{{item.value}}</option>
+        <option *ngFor="let item of collectionItems" [value]="item.code">{{item.value}}</option>
     </select>
     <i class="fas fa-sort-down"></i>
 </div>
