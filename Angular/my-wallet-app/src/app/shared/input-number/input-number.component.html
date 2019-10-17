@@ -1,0 +1,9 @@
+<div class="input-container">
+    <input #input type="text" 
+    [placeholder]="customPlaceHolder" 
+    [disabled]="isDisabled" 
+    class="text-input"
+    (keydown)="onKeyDown($event)" 
+    [value]="_val"
+    maxlength="10">    
+</div>

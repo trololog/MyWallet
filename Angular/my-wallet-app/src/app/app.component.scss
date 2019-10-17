@@ -1,6 +1,7 @@
 $main-background-color: #eef0f2;
 $sidebar-background-color: #19222a;
 
+
 @media screen and (min-width: 640px) {
     .container {
         display: flex;
@@ -36,3 +37,7 @@ $sidebar-background-color: #19222a;
     height:100%;
 }
 
+.row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

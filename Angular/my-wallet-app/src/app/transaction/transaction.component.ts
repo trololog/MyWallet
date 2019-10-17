@@ -17,6 +17,8 @@ export class TransactionComponent implements OnInit {
   constructor(private transactionService: TransactionService) { }
   transactionTypes: TransactionType[];
   balance: Balance = new Balance();
+  placeHolder: string = "Transaction Concept";
+  placeHolder1: string = "Transaction amount";
 
   ngOnInit() {
     this.transactionTypes = this.transactionService.getTransactionTypes();

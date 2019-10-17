@@ -3,6 +3,7 @@
 @import "scss/solid.scss";
 
 $card-header-font-color: #333748;
+$button-bkg-color:#e3e5e8;
 
 html, body {
     min-height: 100%;
@@ -41,30 +42,21 @@ body {
     padding-top:10px;
 }
 
-.drop-down {
-    border:0;
-    padding-bottom: 12px;
-    padding-right:15px;
-    padding-top:15px;
-    font-size:12px;
-    font-weight: bold;
-
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    appearance:none;
-} 
-
-.select-container {
-    border-bottom: 1px solid #edecef;
-    display: inline-block;
-   
-}
-
 .form-header {
     text-transform: uppercase;
 }
 
-.row {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.button {
+    background-color: #ffffff;
+    border: 1px solid $button-bkg-color;
+    width:100px;
+    height:40px;
+    border-radius: 5px;
+    color: #344258;
+    font-weight: bold;
+    font-size: 11px;
+
+    &:hover {
+        background-color: darken($button-bkg-color,0.1);
+    }
 }

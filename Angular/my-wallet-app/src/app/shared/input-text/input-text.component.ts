@@ -24,8 +24,7 @@ export class InputTextComponent implements OnInit, ControlValueAccessor {
     }
 
     onInput(value: string) {
-        console.log(1);
-        this._val = value;
+        this._val = value || "";
         this.onChange(this._val);
         this.onTouch();
     }
@@ -35,13 +34,11 @@ export class InputTextComponent implements OnInit, ControlValueAccessor {
     onTouch: any = () => {};
 
     writeValue(value: any) {
-        console.log(2);
         if (value) {
-            this._val = value || '';
+            this._val = value || "";
         } else {
-            this._val = '';
+            this._val = "";
         }
-        console.log(this._val);
     }
 
     registerOnChange(fn:any) {

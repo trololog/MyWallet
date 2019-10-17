@@ -3,18 +3,21 @@ import { FormsModule } from '@angular/forms';
 import { DropDownComponent } from './dropdown/dropdown.component';
 import { CommonModule } from '@angular/common';
 import { InputTextComponent } from './input-text/input-text.component';
+import { InputNumberComponent } from './input-number/input.number.component';
 
 @NgModule({
     declarations: [
         DropDownComponent,
-        InputTextComponent
+        InputTextComponent,
+        InputNumberComponent
     ],
     imports: [
         CommonModule,
         FormsModule
     ],exports: [
         DropDownComponent,
-        InputTextComponent
+        InputTextComponent,
+        InputNumberComponent
     ]
 })
 export class SharedModule {}
