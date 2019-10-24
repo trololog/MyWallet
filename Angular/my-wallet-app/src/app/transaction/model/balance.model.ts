@@ -16,6 +16,10 @@ export class Balance {
         });
     }
 
+    getTransactions() {
+        return this.transactions;
+    }
+
     getTotal() {
         return this.total;
     }

@@ -1,19 +1,19 @@
-import { Component, OnInit, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { OnInit, Component, forwardRef, Input } from '@angular/core';
 
 @Component({
-    selector:'app-input-number',
-    templateUrl: './input-number.component.html',
-    styleUrls: ['./input-number.component.scss'],
+    selector: 'app-input-date',
+    templateUrl: './input-date.component.html',
+    styleUrls: ['./input-date.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => InputNumberComponent),
+            useExisting: forwardRef(() => InputDateComponent),
             multi: true
         }
     ]
 })
-export class InputNumberComponent implements OnInit, ControlValueAccessor {
+export class InputDateComponent implements OnInit, ControlValueAccessor {
     @Input() customPlaceHolder: string;
 
     _val: string = "";
@@ -37,7 +37,8 @@ export class InputNumberComponent implements OnInit, ControlValueAccessor {
         if(!((event.key >= 0 && event.key <= 9) 
         || event.key === "." 
         || event.key === "Backspace" 
-        || event.key === "Tab")) {
+        || event.key === "Tab"
+        || event.key === "/")) {
             event.preventDefault();
         }
     }

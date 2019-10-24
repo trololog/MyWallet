@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef  } from '@angular/core';
+import { Component, Input, forwardRef, Output, EventEmitter  } from '@angular/core';
 import { DropdownItem } from './dropDownItem.model';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -24,6 +24,8 @@ export class DropDownComponent implements ControlValueAccessor {
 
     @Input()
     collectionItems: DropdownItem[] = [];
+
+    @Output() valueChange: EventEmitter<string> = new EventEmitter();
 
     onChange: any = () => {};
     onTouched: any = () => {};
@@ -52,9 +54,9 @@ export class DropDownComponent implements ControlValueAccessor {
     }
 
     selectItem(item) {
-        console.log(item);
         this.onChange(item);
         this.value = item;
+        this.valueChange.emit(item);
     }
 
     setDisabledState(isDisabled: boolean) {

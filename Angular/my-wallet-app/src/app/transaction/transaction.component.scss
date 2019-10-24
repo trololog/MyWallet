@@ -1,3 +1,33 @@
 .header {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-header {
+    margin-bottom: 10px;
+}
+
+.positive-amount {
+    color: #54b372;
+}
+
+.negative-amount {
+    color: #db5b5a;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transaction-list-item {
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    & .description {
+        color: black;
+        font-size: 12px;
+    }
 }
