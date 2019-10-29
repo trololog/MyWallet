@@ -49,30 +49,50 @@ export class TransactionComponent implements OnInit {
   onTypeChange(event: string) {
     this.filteredCategories = [...this.transactionCategories
     .filter(t=> t.typeId === event)];
+    console.log(this.filteredCategories);
   }
 
   onAddTransaction() {
     const dateElements = this.getControlValue("date").split("/");
     const transaction: Transaction = {
-      amount: parseFloat(this.getControlValue("amount")),
+      amount: this.getAmountValue(parseFloat(this.getControlValue("amount")), this.getControlValue("type")),
       concept: this.getControlValue("concept"),
       type: this.getControlValue("type"),
-      category: this.getControlValue("category"),
+      categoryDescription: this.getTransactionCategory(this.getControlValue("category")),
       date: new Date(`${ dateElements[2] }-${ dateElements[1] }-${ dateElements[0] }`)
     };
+
+    console.log(transaction);
 
     this.balance.addTransaction(transaction);
     
     this.resetForm();
   }
 
-  getTransactionCategory(category: string) {
-    return this.transactionCategories
+  getAmountValue(value: number, type: string) {
+    if(type === "2") {
+      return value*-1;
+    } else {
+      return value;
+    }
+  }
+
+  getTransactionCategory(category: any) {
+    return this.filteredCategories
     .find(t=> t.code === category)
       .value;
   }
   
   setAmountClass(item:string) {
-    return "transaction-list-item number " + (item === "1" ? "positive-amount" : "negative-amount");
+    const valueNumber = parseFloat(item);
+    return "transaction-list-item number " + (valueNumber >= 0 ? "positive-amount" : "negative-amount");
+  }
+
+  displaySymbol(amount: number) {
+    if(amount > 0 ) {
+      return "+";
+    } else {
+      return "";
+    }
   }
 }

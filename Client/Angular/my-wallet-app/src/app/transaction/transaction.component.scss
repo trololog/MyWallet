@@ -1,0 +1,56 @@
+$data-soft-color: #b0afb0;
+$data-dark-color: #27262f;
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top:20px;
+}
+
+.form-header {
+    margin-bottom: 10px;
+}
+
+.positive-amount {
+    color: #54b372;
+}
+
+.negative-amount {
+    color: #db5b5a;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transaction-list {
+    padding-top:20px;
+    width:100%;
+}
+
+.transaction-list-item {
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    font-size:14px;
+
+    &.date-item {
+        color: $data-soft-color;
+    }
+
+    &.desc-item {
+        color: $data-dark-color;
+        font-size: 20px;
+        font-weight: bold;
+        min-width: 200px;
+    }
+
+    &.amount-item {
+        float: right;
+        padding-right: 20px;
+        font-weight: bold;
+    }
+}

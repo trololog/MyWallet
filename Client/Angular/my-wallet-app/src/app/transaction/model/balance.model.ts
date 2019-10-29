@@ -10,6 +10,7 @@ export class Balance {
     }
 
     addTransaction(transaction: Transaction) {
+        this.total = 0;
         this.transactions.push(transaction);
         this.transactions.forEach(t=> {
             this.total += t.amount;

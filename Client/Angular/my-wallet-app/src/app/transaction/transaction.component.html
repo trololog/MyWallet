@@ -1,0 +1,45 @@
+<div class="card-container">
+    <h2>Monthly Transactions</h2>
+    <div class="form-container">
+        <div class="row">
+            <form [formGroup]="transactionForm">
+                <app-dropdown [collectionItems]="transactionTypes" formControlName="type"
+                    (valueChange)="onTypeChange($event)">
+                </app-dropdown>
+                <app-dropdown [collectionItems]="filteredCategories" formControlName="category">
+                </app-dropdown>
+                <app-input-text [customPlaceHolder]="placeHolder" formControlName="concept"></app-input-text>
+                <app-input-number [customPlaceHolder]="placeHolder1" formControlName="amount"></app-input-number>
+                <app-input-date [customPlaceHolder]="placeHolder2" formControlName="date"></app-input-date>
+                <button class="button" type="button" (click)="onAddTransaction()">Add</button>
+            </form>
+        </div>
+        <div class="row header">
+            <h3 class="form-header">
+                <span>
+                    total balance
+                </span>
+                <br>
+                <div *ngIf="balance.getTotal() > 0">
+                    <span style="margin-top:10px; font-size:20px" [ngClass]="setAmountClass(balance.getTotal())">
+                        {{ displaySymbol(balance.getTotal()) }}{{ balance.getTotal() | currency:'PEN':'symbol-narrow':'5.2-2' }}
+                    </span>
+                </div>
+            </h3>
+        </div>
+        <div class="row">
+            <div class="transaction-list">
+                <ul>
+                    <li *ngFor="let transaction of balance.getTransactions()">
+                        <span class="transaction-list-item date-item">{{ transaction.date | date:'dd/MM/yyyy' }}</span>
+                        <span class="transaction-list-item">{{ transaction.categoryDescription }}</span>
+                        <span class="transaction-list-item desc-item">{{ transaction.concept }}</span>
+                        <span class="amount-item" [ngClass]="setAmountClass(transaction.amount)">
+                            {{ displaySymbol(transaction.amount) }}{{ transaction.amount | currency:'PEN':'symbol-narrow':'5.2-2' }}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
