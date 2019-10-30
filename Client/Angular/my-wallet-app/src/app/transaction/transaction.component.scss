@@ -1,5 +1,6 @@
 $data-soft-color: #b0afb0;
 $data-dark-color: #27262f;
+$border-color: #f5f5f5;
 
 .header {
     text-align: center;
@@ -26,7 +27,9 @@ ul {
 }
 
 .transaction-list {
+    border-top:1px solid $border-color;
     padding-top:20px;
+    margin-top:20px;
     width:100%;
 }
 
@@ -35,7 +38,7 @@ ul {
     padding-right: 15px;
     padding-left: 15px;
     margin-bottom: 15px;
-    font-size:14px;
+    font-size:16px;
 
     &.date-item {
         color: $data-soft-color;

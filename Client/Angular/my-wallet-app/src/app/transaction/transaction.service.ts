@@ -1,9 +1,21 @@
 import { TransactionType } from './model/transaction-type.model';
 import { TransactionCategory } from './model/transaction-category.model';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Balance } from './model/balance.model';
+import { Transaction } from './model/transaction.model';
+import { environment } from '../../environments/environment';
+import { Subject }  from 'rxjs';
+import { Guid } from 'guid-typescript';
 
+@Injectable()
 export class TransactionService {
     private transactionType: TransactionType[] = [];
     private transactionCategories: TransactionCategory[] = [];
+    private balance:Balance;
+    private transactionsUpdated = new Subject<{transaction:Transaction[], transactionCount: number}>();
+
+    constructor(private http: HttpClient) {}
 
     getTransactionTypes() {
         this.transactionType.push(
@@ -69,5 +81,39 @@ export class TransactionService {
         );
 
         return this.transactionCategories;
+    }
+
+    getTransactionsUpdatedListener() {
+        return this.transactionsUpdated.asObservable();
+    }
+
+    saveTransaction(transaction: Transaction) {
+        this.http.post<{transactionCount: number}>(environment.apiUrl + '/transaction', transaction)
+            .subscribe(response => {
+                this.balance.addTransaction(transaction);
+                this.transactionsUpdated.next({ transaction: [...this.balance.getTransactions()], transactionCount: response.transactionCount});
+            }, error => {
+                console.log(error);
+            });
+    }
+
+    updateTransaction(transaction: Transaction) {
+        this.http.put<{transactionCount: number}>(environment.apiUrl + '/transaction', transaction)
+            .subscribe(response => {
+                this.balance.updateTransaction(transaction);
+                this.transactionsUpdated.next({ transaction: [...this.balance.getTransactions()], transactionCount: response.transactionCount});
+            }, error => {
+                console.log(error);
+            })
+    }
+
+    deleteTransaction(id : Guid) {
+        this.http.delete<{transactionCount: number}>(environment.apiUrl)
+            .subscribe(response => {
+                this.balance.removeTransaction(id);
+                this.transactionsUpdated.next({ transaction: [...this.balance.getTransactions()], transactionCount: response.transactionCount});
+            }, error => {
+                console.log(error);
+            });
     }
 }

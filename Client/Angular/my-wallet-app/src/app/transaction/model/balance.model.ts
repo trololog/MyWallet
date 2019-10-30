@@ -1,4 +1,5 @@
 import { Transaction } from './transaction.model';
+import { Guid } from 'guid-typescript';
 
 export class Balance {
     private total: number;
@@ -12,6 +13,23 @@ export class Balance {
     addTransaction(transaction: Transaction) {
         this.total = 0;
         this.transactions.push(transaction);
+        this.calculateTotal();
+    }
+
+    removeTransaction(id: Guid) {
+        const index = this.transactions.findIndex(t=> t.id === id);
+
+        this.transactions.splice(index,1);
+        this.calculateTotal();
+    }
+
+    updateTransaction(transaction: Transaction) {
+        let t = this.transactions.find(t => t.id === transaction.id);
+        t = { ... transaction };
+        this.calculateTotal();
+    }
+
+    calculateTotal() {
         this.transactions.forEach(t=> {
             this.total += t.amount;
         });
