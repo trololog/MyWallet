@@ -1,0 +1,8 @@
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.Interface\bin\Debug\netstandard2.0\MyWalletApi.Data.Interface.deps.json
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.Interface\bin\Debug\netstandard2.0\MyWalletApi.Data.Interface.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.Interface\bin\Debug\netstandard2.0\MyWalletApi.Data.Interface.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.Interface\obj\Debug\netstandard2.0\MyWalletApi.Data.Interface.csprojAssemblyReference.cache
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.Interface\obj\Debug\netstandard2.0\MyWalletApi.Data.Interface.AssemblyInfoInputs.cache
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.Interface\obj\Debug\netstandard2.0\MyWalletApi.Data.Interface.AssemblyInfo.cs
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.Interface\obj\Debug\netstandard2.0\MyWalletApi.Data.Interface.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.Interface\obj\Debug\netstandard2.0\MyWalletApi.Data.Interface.pdb
