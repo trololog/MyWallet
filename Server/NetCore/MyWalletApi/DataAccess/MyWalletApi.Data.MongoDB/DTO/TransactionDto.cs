@@ -1,14 +1,10 @@
 using System;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+using MyWalletApi.Data.Interface.Model;
 
-namespace MyWalletApi.Data.MongoDB.DTO 
+namespace MyWalletApi.Data.MongoDB.DTO
 {
-    public class Transaction 
+    public class TransactionDTO: BaseModel, ITransaction
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
         public string TransactionType { get; set; }
         public string CategoryDescription { get; set; }
         public decimal Amount { get; set; }

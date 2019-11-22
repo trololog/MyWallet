@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{EB2895FA-42F5-42FD-907C-6DDFBB9E28A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWalletApi.Web", "Api\MyWalletApi.Web\MyWalletApi.Web.csproj", "{9225CE95-7836-4295-A5A2-B06825E6BE03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWalletApi.Web", "MyWalletApi.Web\MyWalletApi.Web.csproj", "{9225CE95-7836-4295-A5A2-B06825E6BE03}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Converter", "Converter", "{632AA9D6-3FED-4EF2-9192-38028D920907}"
 EndProject
@@ -19,11 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWalletApi.Data.MongoDB", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{8FDB079F-CE42-4030-8996-25477A58EECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWalletApi.Model", "Model\MyWalletApi.Model\MyWalletApi.Model.csproj", "{9082CF27-4233-4093-9CB6-24DB3E2F60F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWalletApi.Model", "Business\Model\MyWalletApi.Model\MyWalletApi.Model.csproj", "{9082CF27-4233-4093-9CB6-24DB3E2F60F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{E239BFE4-5587-4C77-9439-A919336B4AD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWalletApi.Service", "Service\MyWalletApi.Service\MyWalletApi.Service.csproj", "{A15139A8-5D22-405C-B742-8062E8874C03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWalletApi.Service", "Business\Service\MyWalletApi.Service\MyWalletApi.Service.csproj", "{A15139A8-5D22-405C-B742-8062E8874C03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

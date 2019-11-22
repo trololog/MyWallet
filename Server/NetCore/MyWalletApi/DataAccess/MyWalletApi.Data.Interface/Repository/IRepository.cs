@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System;
+using MyWalletApi.Data.Interface.Model;
 
 namespace MyWalletApi.Data.Interface.Repository 
 {
-    public interface IRepository<T> where T: class
+    public interface IRepository<T> where T: IBaseModel
     {
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Func<T, bool> predicate);

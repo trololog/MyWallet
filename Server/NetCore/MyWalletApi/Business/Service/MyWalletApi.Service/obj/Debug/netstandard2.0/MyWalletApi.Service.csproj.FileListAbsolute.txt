@@ -1,0 +1,16 @@
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Service.deps.json
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Service.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Service.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.csprojAssemblyReference.cache
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.AssemblyInfoInputs.cache
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.AssemblyInfo.cs
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Service.deps.json
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Service.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Service.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.csprojAssemblyReference.cache
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.AssemblyInfoInputs.cache
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.AssemblyInfo.cs
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.pdb
