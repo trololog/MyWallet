@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using MyWalletApi.Model.Interface;
+using System.Threading.Tasks;
 
 namespace MyWalletApi.Data.MongoDB.Repository 
 {
@@ -42,11 +43,11 @@ namespace MyWalletApi.Data.MongoDB.Repository
             return _collection.AsQueryable().Where(predicate);
         }
 
-        public IEnumerable<ITransaction> GetAll()
+        public async Task<IEnumerable<ITransaction>> GetAll()
         {
-            var result = _collection.Find(e => true).ToList();
+            var result = await _collection.FindAsync(e => true);
 
-            return result.Cast<ITransaction>().ToList();
+            return result.ToList().Cast<ITransaction>();
         }
 
         public ITransaction GetById(int id)

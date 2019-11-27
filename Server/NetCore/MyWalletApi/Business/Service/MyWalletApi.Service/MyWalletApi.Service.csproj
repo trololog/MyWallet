@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\DataAccess\MyWalletApi.Data.Interface\MyWalletApi.Data.Interface.csproj" />
     <ProjectReference Include="..\..\..\Model\MyWalletApi.Model.Interface\MyWalletApi.Model.Interface.csproj" />
+    <ProjectReference Include="..\..\..\Model\MyWalletApi.Model\MyWalletApi.Model.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

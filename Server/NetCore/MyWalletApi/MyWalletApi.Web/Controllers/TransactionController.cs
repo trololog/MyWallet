@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MyWalletApi.Business.Service.Interface;
 using MyWalletApi.Model.Interface;
 using MyWalletApi.Model;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace MyWalletApi.Web
 {
@@ -19,9 +19,23 @@ namespace MyWalletApi.Web
         }
 
         [HttpGet]
-        public List<ITransaction> GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return _transactionService.GetTransactions().ToList();
+            var result = await _transactionService.GetTransactions();
+
+            if(result == null)
+                return HttpStatusCode(500);
+
+            return Ok(result);
         }
+
+        [HttpGet]
+        [Route("balance")]
+        public async Task<IActionResult> GetAccountBalance() 
+        {
+            var result = await _transactionService.GetAccountBalance();
+        }
+
+        public 
     }
 }

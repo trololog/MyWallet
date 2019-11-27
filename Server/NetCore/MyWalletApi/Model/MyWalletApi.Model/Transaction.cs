@@ -1,6 +1,5 @@
 using System;
 using MyWalletApi.Model.Interface;
-using MyWalletApi.Model;
 
 namespace MyWalletApi.Model
 {
