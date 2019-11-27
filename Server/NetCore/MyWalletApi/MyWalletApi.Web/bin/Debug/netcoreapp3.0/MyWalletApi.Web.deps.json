@@ -26,6 +26,8 @@
         "dependencies": {
           "MyWalletApi.Data.Interface": "1.0.0",
           "MyWalletApi.Data.MongoDB": "1.0.0",
+          "MyWalletApi.Model.Interface": "1.0.0",
+          "MyWalletApi.Service": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.0.0.0",
@@ -1118,6 +1120,9 @@
         }
       },
       "MyWalletApi.Data.Interface/1.0.0": {
+        "dependencies": {
+          "MyWalletApi.Model.Interface": "1.0.0"
+        },
         "runtime": {
           "MyWalletApi.Data.Interface.dll": {}
         },
@@ -1129,13 +1134,46 @@
         "dependencies": {
           "MongoDB.Driver": "2.9.3",
           "MongoDB.Driver.Core": "2.9.3",
-          "MyWalletApi.Data.Interface": "1.0.0"
+          "MyWalletApi.Data.Interface": "1.0.0",
+          "MyWalletApi.Model": "1.0.0",
+          "MyWalletApi.Model.Interface": "1.0.0"
         },
         "runtime": {
           "MyWalletApi.Data.MongoDB.dll": {}
         },
         "compile": {
           "MyWalletApi.Data.MongoDB.dll": {}
+        }
+      },
+      "MyWalletApi.Model/1.0.0": {
+        "dependencies": {
+          "MyWalletApi.Model.Interface": "1.0.0"
+        },
+        "runtime": {
+          "MyWalletApi.Model.dll": {}
+        },
+        "compile": {
+          "MyWalletApi.Model.dll": {}
+        }
+      },
+      "MyWalletApi.Model.Interface/1.0.0": {
+        "runtime": {
+          "MyWalletApi.Model.Interface.dll": {}
+        },
+        "compile": {
+          "MyWalletApi.Model.Interface.dll": {}
+        }
+      },
+      "MyWalletApi.Service/1.0.0": {
+        "dependencies": {
+          "MyWalletApi.Data.Interface": "1.0.0",
+          "MyWalletApi.Model.Interface": "1.0.0"
+        },
+        "runtime": {
+          "MyWalletApi.Service.dll": {}
+        },
+        "compile": {
+          "MyWalletApi.Service.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.0.0.0": {
@@ -3446,6 +3484,21 @@
       "sha512": ""
     },
     "MyWalletApi.Data.MongoDB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyWalletApi.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyWalletApi.Model.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyWalletApi.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

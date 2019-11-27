@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MyWalletApi.Data.Interface.Repository;
 using MyWalletApi.Data.MongoDB.Settings;
 using MongoDB.Driver;
-using MyWalletApi.Data.Interface.Model;
+using MyWalletApi.Model.Interface;
 using System.Linq;
 
 namespace MyWalletApi.Data.MongoDB

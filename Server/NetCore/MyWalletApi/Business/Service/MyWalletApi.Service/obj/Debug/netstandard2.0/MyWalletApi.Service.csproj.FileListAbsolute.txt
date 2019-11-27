@@ -14,3 +14,8 @@ C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.AssemblyInfo.cs
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.dll
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Data.Interface.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Model.Interface.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Data.Interface.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\bin\Debug\netstandard2.0\MyWalletApi.Model.Interface.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\Business\Service\MyWalletApi.Service\obj\Debug\netstandard2.0\MyWalletApi.Service.csproj.CopyComplete

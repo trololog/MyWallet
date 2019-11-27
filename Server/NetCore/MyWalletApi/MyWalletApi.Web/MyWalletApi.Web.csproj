@@ -3,6 +3,8 @@
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\MyWalletApi.Data.Interface\MyWalletApi.Data.Interface.csproj" />
     <ProjectReference Include="..\DataAccess\MyWalletApi.Data.MongoDB\MyWalletApi.Data.MongoDB.csproj" />
+    <ProjectReference Include="..\Business\Service\MyWalletApi.Service\MyWalletApi.Service.csproj" />
+    <ProjectReference Include="..\Model\MyWalletApi.Model.Interface\MyWalletApi.Model.Interface.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

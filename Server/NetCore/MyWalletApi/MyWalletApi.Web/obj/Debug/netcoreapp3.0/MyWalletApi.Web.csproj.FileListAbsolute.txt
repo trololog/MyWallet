@@ -54,3 +54,9 @@ C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletA
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\bin\Debug\netcoreapp3.0\MyWalletApi.Data.Interface.pdb
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\bin\Debug\netcoreapp3.0\MyWalletApi.Data.MongoDB.pdb
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\obj\Debug\netcoreapp3.0\MyWalletApi.Web.csproj.CopyComplete
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\bin\Debug\netcoreapp3.0\MyWalletApi.Model.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\bin\Debug\netcoreapp3.0\MyWalletApi.Model.Interface.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\bin\Debug\netcoreapp3.0\MyWalletApi.Service.dll
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\bin\Debug\netcoreapp3.0\MyWalletApi.Service.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\bin\Debug\netcoreapp3.0\MyWalletApi.Model.Interface.pdb
+C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\MyWalletApi.Web\bin\Debug\netcoreapp3.0\MyWalletApi.Model.pdb

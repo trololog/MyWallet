@@ -1432,6 +1432,9 @@
       "MyWalletApi.Data.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MyWalletApi.Model.Interface": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/MyWalletApi.Data.Interface.dll": {}
         },
@@ -1445,13 +1448,52 @@
         "dependencies": {
           "MongoDB.Driver": "2.9.3",
           "MongoDB.Driver.Core": "2.9.3",
-          "MyWalletApi.Data.Interface": "1.0.0"
+          "MyWalletApi.Data.Interface": "1.0.0",
+          "MyWalletApi.Model": "1.0.0",
+          "MyWalletApi.Model.Interface": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MyWalletApi.Data.MongoDB.dll": {}
         },
         "runtime": {
           "bin/placeholder/MyWalletApi.Data.MongoDB.dll": {}
+        }
+      },
+      "MyWalletApi.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MyWalletApi.Model.Interface": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyWalletApi.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyWalletApi.Model.dll": {}
+        }
+      },
+      "MyWalletApi.Model.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/MyWalletApi.Model.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyWalletApi.Model.Interface.dll": {}
+        }
+      },
+      "MyWalletApi.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MyWalletApi.Data.Interface": "1.0.0",
+          "MyWalletApi.Model.Interface": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyWalletApi.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyWalletApi.Service.dll": {}
         }
       }
     }
@@ -5089,12 +5131,29 @@
       "type": "project",
       "path": "../DataAccess/MyWalletApi.Data.MongoDB/MyWalletApi.Data.MongoDB.csproj",
       "msbuildProject": "../DataAccess/MyWalletApi.Data.MongoDB/MyWalletApi.Data.MongoDB.csproj"
+    },
+    "MyWalletApi.Model/1.0.0": {
+      "type": "project",
+      "path": "../Model/MyWalletApi.Model/MyWalletApi.Model.csproj",
+      "msbuildProject": "../Model/MyWalletApi.Model/MyWalletApi.Model.csproj"
+    },
+    "MyWalletApi.Model.Interface/1.0.0": {
+      "type": "project",
+      "path": "../Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj",
+      "msbuildProject": "../Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj"
+    },
+    "MyWalletApi.Service/1.0.0": {
+      "type": "project",
+      "path": "../Business/Service/MyWalletApi.Service/MyWalletApi.Service.csproj",
+      "msbuildProject": "../Business/Service/MyWalletApi.Service/MyWalletApi.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "MyWalletApi.Data.Interface >= 1.0.0",
-      "MyWalletApi.Data.MongoDB >= 1.0.0"
+      "MyWalletApi.Data.MongoDB >= 1.0.0",
+      "MyWalletApi.Model.Interface >= 1.0.0",
+      "MyWalletApi.Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5121,11 +5180,17 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Business\\Service\\MyWalletApi.Service\\MyWalletApi.Service.csproj": {
+              "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Business\\Service\\MyWalletApi.Service\\MyWalletApi.Service.csproj"
+            },
             "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\DataAccess\\MyWalletApi.Data.Interface\\MyWalletApi.Data.Interface.csproj": {
               "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\DataAccess\\MyWalletApi.Data.Interface\\MyWalletApi.Data.Interface.csproj"
             },
             "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\DataAccess\\MyWalletApi.Data.MongoDB\\MyWalletApi.Data.MongoDB.csproj": {
               "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\DataAccess\\MyWalletApi.Data.MongoDB\\MyWalletApi.Data.MongoDB.csproj"
+            },
+            "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj": {
+              "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj"
             }
           }
         }

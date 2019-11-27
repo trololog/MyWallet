@@ -1,5 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DataAccess\MyWalletApi.Data.Interface\MyWalletApi.Data.Interface.csproj" />
+    <ProjectReference Include="..\..\..\Model\MyWalletApi.Model.Interface\MyWalletApi.Model.Interface.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>

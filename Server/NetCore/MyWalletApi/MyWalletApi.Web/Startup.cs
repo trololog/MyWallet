@@ -14,6 +14,9 @@ using Microsoft.Extensions.Options;
 using MyWalletApi.Data.MongoDB.Settings;
 using MyWalletApi.Data.Interface.Repository;
 using MyWalletApi.Data.MongoDB.Repository;
+using MyWalletApi.Business.Service.Interface;
+using MyWalletApi.Business.Service;
+using MyWalletApi.Model.Interface;
 
 namespace MyWalletApi.Web
 {
@@ -34,7 +37,9 @@ namespace MyWalletApi.Web
             
             services.AddSingleton<IMyWalletDatabaseSettings>(sp => 
                     sp.GetRequiredService<IOptions<MyWalletDatabaseSettings>>().Value);
-            services.AddSingleton<ITransactionRepository, TransactionRepository>();
+            
+            services.AddSingleton<ITransactionService, TransactionService>();
+            services.AddSingleton<ITransactionRepository<ITransaction>, TransactionRepository>();
 
             services.AddControllers();
         }
