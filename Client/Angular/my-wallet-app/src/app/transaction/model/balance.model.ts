@@ -16,6 +16,12 @@ export class Balance {
         this.calculateTotal();
     }
 
+    addTransactions(transactions: Transaction[]) {
+        this.total = 0;
+        this.transactions.push(...transactions);
+        this.calculateTotal();
+    }
+
     removeTransaction(id: Guid) {
         const index = this.transactions.findIndex(t=> t.id === id);
 

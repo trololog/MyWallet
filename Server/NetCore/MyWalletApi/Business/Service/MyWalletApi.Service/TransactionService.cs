@@ -32,11 +32,11 @@ namespace MyWalletApi.Business.Service
             }
         }
 
-        public Balance GetAccountBalance()
+        public async Task<Balance> GetAccountBalance()
         {
             try
             {
-                var transactions = _transactionRepository.GetAll();
+                var transactions = await _transactionRepository.GetAll();
                 var incomeList = transactions.Where(t => t.TransactionType == "Income");
                 var expenseList = transactions.Where(t => t.TransactionType == "Expense");
                 var totalIncome = incomeList.Sum(i => i.Amount);
@@ -54,7 +54,49 @@ namespace MyWalletApi.Business.Service
             }
             catch(Exception ex)
             {
-                throw ex;
+                return null;
+            }
+        }
+
+        public async Task<string> AddTransaction(ITransaction transaction)
+        {
+            try 
+            {
+                var result = await _transactionRepository.Add(transaction);
+
+                return result;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> UpdateTransaction(ITransaction transaction)
+        {
+            try 
+            {
+                var result = await _transactionRepository.Update(transaction);
+
+                return result;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> DeleteTransaction(string id)
+        {
+            try 
+            {
+                var result = await _transactionRepository.Delete(id);
+
+                return result;
+            }
+            catch(Exception ex)
+            {
+                return null;
             }
         }
     }

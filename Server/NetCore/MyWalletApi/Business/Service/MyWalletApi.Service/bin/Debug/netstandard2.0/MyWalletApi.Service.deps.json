@@ -10,6 +10,7 @@
       "MyWalletApi.Service/1.0.0": {
         "dependencies": {
           "MyWalletApi.Data.Interface": "1.0.0",
+          "MyWalletApi.Model": "1.0.0",
           "MyWalletApi.Model.Interface": "1.0.0",
           "NETStandard.Library": "2.0.3"
         },
@@ -29,6 +30,14 @@
         },
         "runtime": {
           "MyWalletApi.Data.Interface.dll": {}
+        }
+      },
+      "MyWalletApi.Model/1.0.0": {
+        "dependencies": {
+          "MyWalletApi.Model.Interface": "1.0.0"
+        },
+        "runtime": {
+          "MyWalletApi.Model.dll": {}
         }
       },
       "MyWalletApi.Model.Interface/1.0.0": {
@@ -59,6 +68,11 @@
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
     "MyWalletApi.Data.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyWalletApi.Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

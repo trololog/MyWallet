@@ -1135,7 +1135,6 @@
           "MongoDB.Driver": "2.9.3",
           "MongoDB.Driver.Core": "2.9.3",
           "MyWalletApi.Data.Interface": "1.0.0",
-          "MyWalletApi.Model": "1.0.0",
           "MyWalletApi.Model.Interface": "1.0.0"
         },
         "runtime": {
@@ -1167,6 +1166,7 @@
       "MyWalletApi.Service/1.0.0": {
         "dependencies": {
           "MyWalletApi.Data.Interface": "1.0.0",
+          "MyWalletApi.Model": "1.0.0",
           "MyWalletApi.Model.Interface": "1.0.0"
         },
         "runtime": {

@@ -9,7 +9,5 @@ C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAcces
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.MongoDB\obj\Debug\netstandard2.0\MyWalletApi.Data.MongoDB.csproj.CopyComplete
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.MongoDB\obj\Debug\netstandard2.0\MyWalletApi.Data.MongoDB.dll
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.MongoDB\obj\Debug\netstandard2.0\MyWalletApi.Data.MongoDB.pdb
-C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.MongoDB\bin\Debug\netstandard2.0\MyWalletApi.Model.dll
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.MongoDB\bin\Debug\netstandard2.0\MyWalletApi.Model.Interface.dll
 C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.MongoDB\bin\Debug\netstandard2.0\MyWalletApi.Model.Interface.pdb
-C:\Users\dmorales\Documents\GitHub\MyWallet\Server\NetCore\MyWalletApi\DataAccess\MyWalletApi.Data.MongoDB\bin\Debug\netstandard2.0\MyWalletApi.Model.pdb

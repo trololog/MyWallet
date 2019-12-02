@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TransactionService } from './transaction.service';
 import { TransactionType } from './model/transaction-type.model';
 import { TransactionCategory }  from './model/transaction-category.model';
 import { Balance } from './model/balance.model';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Transaction } from './model/transaction.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-transaction',
@@ -12,7 +13,7 @@ import { Transaction } from './model/transaction.model';
   styleUrls: ['./transaction.component.scss'],
   providers: [TransactionService]
 })
-export class TransactionComponent implements OnInit {
+export class TransactionComponent implements OnInit, OnDestroy {
 
   transactionForm: FormGroup;
 
@@ -20,10 +21,14 @@ export class TransactionComponent implements OnInit {
   transactionTypes: TransactionType[];
   transactionCategories: TransactionCategory[];
   filteredCategories: TransactionCategory[];
+
   balance: Balance = new Balance();
   placeHolder: string = "Transaction Concept";
   placeHolder1: string = "Transaction amount";
   placeHolder2: string = "DD/MM/YYYY";
+
+  transactionSubs = new Subscription();
+  totalTransactions: number;
 
   ngOnInit() {
     this.transactionTypes = this.transactionService.getTransactionTypes();
@@ -36,6 +41,18 @@ export class TransactionComponent implements OnInit {
       'amount': new FormControl('',  [Validators.required]),
       'date': new FormControl('', [Validators.required])
     });
+
+    this.transactionSubs = this.transactionService.getTransactionsUpdatedListener()
+      .subscribe(({ balance, transactionCount }) => {
+          this.balance = balance;
+          this.totalTransactions = transactionCount;
+      });
+    
+    this.transactionService.getTransactions();
+  }
+
+  ngOnDestroy() {
+    this.transactionSubs.unsubscribe();
   }
 
   getControlValue(control: string) {
@@ -55,6 +72,7 @@ export class TransactionComponent implements OnInit {
   onAddTransaction() {
     const dateElements = this.getControlValue("date").split("/");
     const transaction: Transaction = {
+      id: null,
       amount: this.getAmountValue(parseFloat(this.getControlValue("amount")), this.getControlValue("type")),
       concept: this.getControlValue("concept"),
       type: this.getControlValue("type"),
@@ -62,10 +80,8 @@ export class TransactionComponent implements OnInit {
       date: new Date(`${ dateElements[2] }-${ dateElements[1] }-${ dateElements[0] }`)
     };
 
-    console.log(transaction);
-
     this.balance.addTransaction(transaction);
-    
+    this.transactionService.saveTransaction(transaction);    
     this.resetForm();
   }
 

@@ -1456,19 +1456,6 @@
           "bin/placeholder/MyWalletApi.Data.Interface.dll": {}
         }
       },
-      "MyWalletApi.Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "MyWalletApi.Model.Interface": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/MyWalletApi.Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MyWalletApi.Model.dll": {}
-        }
-      },
       "MyWalletApi.Model.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -5237,11 +5224,6 @@
       "path": "../MyWalletApi.Data.Interface/MyWalletApi.Data.Interface.csproj",
       "msbuildProject": "../MyWalletApi.Data.Interface/MyWalletApi.Data.Interface.csproj"
     },
-    "MyWalletApi.Model/1.0.0": {
-      "type": "project",
-      "path": "../../Model/MyWalletApi.Model/MyWalletApi.Model.csproj",
-      "msbuildProject": "../../Model/MyWalletApi.Model/MyWalletApi.Model.csproj"
-    },
     "MyWalletApi.Model.Interface/1.0.0": {
       "type": "project",
       "path": "../../Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj",
@@ -5253,7 +5235,6 @@
       "MongoDB.Driver >= 2.9.3",
       "MongoDB.Driver.Core >= 2.9.3",
       "MyWalletApi.Data.Interface >= 1.0.0",
-      "MyWalletApi.Model >= 1.0.0",
       "MyWalletApi.Model.Interface >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -5287,9 +5268,6 @@
             },
             "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj": {
               "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj"
-            },
-            "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model\\MyWalletApi.Model.csproj": {
-              "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model\\MyWalletApi.Model.csproj"
             }
           }
         }

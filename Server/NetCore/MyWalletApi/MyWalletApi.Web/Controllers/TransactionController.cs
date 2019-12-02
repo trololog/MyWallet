@@ -4,6 +4,8 @@ using MyWalletApi.Business.Service.Interface;
 using MyWalletApi.Model.Interface;
 using MyWalletApi.Model;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Net;
 
 namespace MyWalletApi.Web
 {
@@ -22,20 +24,61 @@ namespace MyWalletApi.Web
         public async Task<IActionResult> GetAll()
         {
             var result = await _transactionService.GetTransactions();
-
+            
             if(result == null)
-                return HttpStatusCode(500);
+                return StatusCode(500);
 
-            return Ok(result);
+            var responseObject = new {
+                transactions = result,
+                count = 0
+            };
+
+            return StatusCode(200, responseObject);
         }
 
         [HttpGet]
         [Route("balance")]
         public async Task<IActionResult> GetAccountBalance() 
         {
-            var result = await _transactionService.GetAccountBalance();
+           var result = await _transactionService.GetAccountBalance();
+
+            if(result == null)
+                return StatusCode(500);
+
+            return Ok(result);
         }
 
-        public 
+        [HttpPost]
+        public async Task<IActionResult> AddTransaction([FromBody] Transaction transaction)
+        {
+            var result = await _transactionService.AddTransaction(transaction);
+
+            if(result == null)
+                return StatusCode(500);
+            
+            return Ok(result);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateTransaction([FromBody] ITransaction transaction)
+        {
+            var result = await _transactionService.UpdateTransaction(transaction);
+
+           if(result == null)
+                return StatusCode(500);
+            
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteTransaction(string id)
+        {
+            var result = await _transactionService.DeleteTransaction(id);
+
+            if(result == null)
+                return StatusCode(500);
+            
+            return Ok();
+        }
     }
 }

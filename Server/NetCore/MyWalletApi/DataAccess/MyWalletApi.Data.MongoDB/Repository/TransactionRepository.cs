@@ -7,6 +7,7 @@ using System.Linq;
 using System.Collections.Generic;
 using MyWalletApi.Model.Interface;
 using System.Threading.Tasks;
+using MyWalletApi.Data.MongoDB.Converter;
 
 namespace MyWalletApi.Data.MongoDB.Repository 
 {
@@ -14,33 +15,45 @@ namespace MyWalletApi.Data.MongoDB.Repository
     {
         private readonly IMongoDatabase _database;
         private readonly IMongoCollection<TransactionDTO> _collection;
+        private readonly TransactionConverter _transactionConverter;
 
         public TransactionRepository(IMyWalletDatabaseSettings settings)
         {
              var client = new MongoClient(settings.ConnectionString);
             _database = client.GetDatabase(settings.DatabaseName);
             _collection = _database.GetCollection<TransactionDTO>("Transactions");
+            _transactionConverter = new TransactionConverter();
         }
 
-        public void Add(ITransaction entity)
+        public async Task<string> Add(ITransaction entity)
+        {
+            var entityDTO = _transactionConverter.Convert(entity);
+            await _collection.InsertOneAsync(entityDTO);
+            var result = await _collection.FindAsync(e => true);
+            return result.ToList().Last().Id;
+        }
+
+        public async Task<string>  Update(ITransaction entity)
         {
             var entityDTO = (TransactionDTO)entity;
-            _collection.InsertOne(entityDTO);
+            await _collection.ReplaceOneAsync(e => e.Id == entityDTO.Id, entityDTO);
+            return entity.Id;
         }
 
-        public void Delete(int id)
+        public async Task<string> Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(string id)
+        public async Task<string> Delete(string id)
         {
-            _collection.DeleteOne(e => e.Id == id);
+            await _collection.DeleteOneAsync(e => e.Id == id);
+            return id;
         }
 
-        public IEnumerable<ITransaction> Find(Func<ITransaction, bool> predicate)
+        public async Task<IEnumerable<ITransaction>> Find(Func<ITransaction, bool> predicate)
         {
-            return _collection.AsQueryable().Where(predicate);
+            return await Task.Run(() => _collection.AsQueryable().Where(predicate));
         }
 
         public async Task<IEnumerable<ITransaction>> GetAll()
@@ -50,20 +63,14 @@ namespace MyWalletApi.Data.MongoDB.Repository
             return result.ToList().Cast<ITransaction>();
         }
 
-        public ITransaction GetById(int id)
+        public async Task<ITransaction> GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ITransaction GetById(string id)
+        public async Task<ITransaction> GetById(string id)
         {
-            return _collection.Find<TransactionDTO>(e=> e.Id == id).FirstOrDefault();
-        }
-
-        public void Update(ITransaction entity)
-        {
-            var entityDTO = (TransactionDTO)entity;
-            _collection.ReplaceOne(e => e.Id == entityDTO.Id, entityDTO);
+            return await _collection.Find<TransactionDTO>(e=> e.Id == id).FirstOrDefaultAsync();
         }
     }
 }
