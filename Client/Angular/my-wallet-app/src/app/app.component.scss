@@ -30,6 +30,7 @@ $sidebar-background-color: #19222a;
 }
 
 .content {
+    position: relative;
     padding:10px;
     box-sizing: border-box;
     background-color: $main-background-color;

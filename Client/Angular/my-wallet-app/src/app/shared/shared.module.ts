@@ -6,6 +6,7 @@ import { InputTextComponent } from './input-text/input-text.component';
 import { InputNumberComponent } from './input-number/input.number.component';
 import { NumericFormatPipe } from './pipes/numeric/numeric-format.pipe';
 import { InputDateComponent } from './input-date/input-date.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import { InputDateComponent } from './input-date/input-date.component';
         InputTextComponent,
         InputNumberComponent,
         InputDateComponent,
+        ModalComponent,
         NumericFormatPipe
     ],
     imports: [
@@ -23,6 +25,7 @@ import { InputDateComponent } from './input-date/input-date.component';
         InputTextComponent,
         InputNumberComponent,
         InputDateComponent,
+        ModalComponent,
         NumericFormatPipe
     ]
 })

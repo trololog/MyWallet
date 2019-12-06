@@ -37,7 +37,9 @@ namespace MyWalletApi.Web
             services.AddCors(options => {
                 options.AddPolicy(MyAllowSpecificOrigins,
                 builder => {
-                    builder.WithOrigins("http://localhost:4200");
+                    builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                 });
             });
 

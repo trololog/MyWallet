@@ -6,25 +6,30 @@ using MyWalletApi.Data.Interface.Repository;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using MyWalletApi.Business.Converter;
 
 namespace MyWalletApi.Business.Service
 {
     public class TransactionService : ITransactionService
     {
         private readonly ITransactionRepository<ITransaction> _transactionRepository;
+        private readonly TransactionConverter _transactionConverter;
 
         public TransactionService(ITransactionRepository<ITransaction> transactionRepository)
         {
             _transactionRepository = transactionRepository;
+            _transactionConverter = new TransactionConverter();
         }
 
-        public async Task<IEnumerable<ITransaction>> GetTransactions()
+        public async Task<Tuple<IEnumerable<Transaction>, long>> GetTransactions()
         {
             try
             {
                 var result = await _transactionRepository.GetAll();
+                var transactions = result.Select(_transactionConverter.Convert);
+                var total = await _transactionRepository.GetCount();
 
-                return result;
+                return new Tuple<IEnumerable<Transaction>, long> (transactions, total);
             }
             catch(Exception ex)
             {

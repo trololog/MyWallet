@@ -10,5 +10,6 @@ namespace MyWalletApi.Model
         public decimal Amount { get; set; }
         public string Concept { get; set; }
         public DateTime Date { get; set; }
+        public long TotalCount { get; set; }
     }
 }

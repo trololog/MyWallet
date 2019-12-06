@@ -12,7 +12,8 @@ import { Guid } from 'guid-typescript';
 export class TransactionService {
     private transactionType: TransactionType[] = [];
     private transactionCategories: TransactionCategory[] = [];
-    private balance:Balance;
+    private balance:Balance = new Balance();
+    private totalTransactions: number = 0;
     private transactionsUpdated = new Subject<{ balance: Balance, transactionCount: number }>();
 
     constructor(private http: HttpClient) {}
@@ -88,10 +89,12 @@ export class TransactionService {
     }
 
     saveTransaction(transaction: Transaction) {
-        this.http.post<{transactionCount: number}>(environment.apiUrl + '/transaction', transaction)
+        this.http.post<{id: string}>(environment.apiUrl + '/transaction', transaction)
             .subscribe(response => {
+                transaction.id = response.id;
                 this.balance.addTransaction(transaction);
-                this.transactionsUpdated.next({ balance: this.balance, transactionCount: response.transactionCount});
+                this.totalTransactions = this.totalTransactions++;
+                this.transactionsUpdated.next({ balance: this.balance, transactionCount: this.totalTransactions });
             }, error => {
                 console.log(error);
             });
@@ -101,28 +104,29 @@ export class TransactionService {
         this.http.put<{transactionCount: number}>(environment.apiUrl + '/transaction', transaction)
             .subscribe(response => {
                 this.balance.updateTransaction(transaction);
-                this.transactionsUpdated.next({ balance: this.balance, transactionCount: response.transactionCount});
+                this.transactionsUpdated.next({ balance: this.balance, transactionCount: this.totalTransactions });
             }, error => {
                 console.log(error);
             })
     }
 
-    deleteTransaction(id : Guid) {
-        this.http.delete<{transactionCount: number}>(environment.apiUrl)
+    deleteTransaction(id : string) {
+        this.http.delete<{id: string}>(environment.apiUrl + '/transaction/' + id)
             .subscribe(response => {
                 this.balance.removeTransaction(id);
-                this.transactionsUpdated.next({ balance: this.balance, transactionCount: response.transactionCount});
+                this.totalTransactions = this.totalTransactions--
+                this.transactionsUpdated.next({ balance: this.balance, transactionCount: this.totalTransactions});
             }, error => {
                 console.log(error);
             });
     }
 
     getTransactions() {
-        this.http.get<{ transactions: Transaction[]}>(environment.apiUrl + '/transaction')
+        this.http.get<{ transactions: Transaction[], transactionCount: number}>(environment.apiUrl + '/transaction')
         .subscribe(response => {
-            console.log(response);
-            /*this.balance.addTransaction(transaction);
-            this.transactionsUpdated.next({ balance: this.balance, transactionCount: response.transactionCount});*/
+            const transactions =  [...response.transactions];
+            this.balance.addTransactions(transactions);
+            this.transactionsUpdated.next({ balance: this.balance, transactionCount: response.transactionCount});
         }, error => {
             console.log(error);
         });
