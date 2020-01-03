@@ -29,8 +29,8 @@ namespace MyWalletApi.Web
                 return StatusCode(500);
 
             var responseObject = new {
-                transactions = result,
-                count = 0
+                transactions = result.Item1,
+                count = result.Item2
             };
 
             return StatusCode(200, responseObject);
@@ -53,10 +53,15 @@ namespace MyWalletApi.Web
         {
             var result = await _transactionService.AddTransaction(transaction);
 
+            
             if(result == null)
                 return StatusCode(500);
+
+            var responseObject = new {
+                id = result
+            };
             
-            return Ok(result);
+            return Ok(responseObject);
         }
 
         [HttpPut]
@@ -71,6 +76,7 @@ namespace MyWalletApi.Web
         }
 
         [HttpDelete]
+        [Route("{id}")]
         public async Task<IActionResult> DeleteTransaction(string id)
         {
             var result = await _transactionService.DeleteTransaction(id);
@@ -78,7 +84,11 @@ namespace MyWalletApi.Web
             if(result == null)
                 return StatusCode(500);
             
-            return Ok();
+            var responseObject = new {
+                id = result
+            };
+            
+            return Ok(responseObject);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace MyWalletApi.Data.Interface.Repository
     public interface ITransactionRepository<T> where T: ITransaction
     {
         Task<IEnumerable<ITransaction>> GetAll();
+        Task<long> GetCount();
         Task<IEnumerable<ITransaction>> Find(Func<ITransaction, bool> predicate);
         Task<ITransaction> GetById(int id);
         Task<ITransaction> GetById(string id);

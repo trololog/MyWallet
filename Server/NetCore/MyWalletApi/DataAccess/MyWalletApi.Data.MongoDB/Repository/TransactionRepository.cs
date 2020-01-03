@@ -63,6 +63,13 @@ namespace MyWalletApi.Data.MongoDB.Repository
             return result.ToList().Cast<ITransaction>();
         }
 
+        public async Task<long> GetCount() 
+        {
+            var result = await _collection.CountDocumentsAsync(e => true);
+
+            return result;
+        }
+
         public async Task<ITransaction> GetById(int id)
         {
             throw new NotImplementedException();

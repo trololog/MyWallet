@@ -81,9 +81,12 @@ export class TransactionComponent implements OnInit, OnDestroy {
       date: new Date(`${ dateElements[2] }-${ dateElements[1] }-${ dateElements[0] }`)
     };
 
-    this.balance.addTransaction(transaction);
     this.transactionService.saveTransaction(transaction);    
     this.resetForm();
+  }
+
+  onDeleteTransaction(transaction: Transaction) {
+    this.transactionService.deleteTransaction(transaction.id);
   }
 
   getAmountValue(value: number, type: string) {
@@ -104,6 +107,8 @@ export class TransactionComponent implements OnInit, OnDestroy {
     const valueNumber = parseFloat(item);
     return "transaction-list-item number " + (valueNumber >= 0 ? "positive-amount" : "negative-amount");
   }
+
+  
 
   displaySymbol(amount: number) {
     if(amount > 0 ) {

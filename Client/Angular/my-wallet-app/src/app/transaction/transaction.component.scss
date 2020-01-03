@@ -49,11 +49,18 @@ ul {
         font-size: 20px;
         font-weight: bold;
         min-width: 200px;
+        cursor: pointer;
     }
 
     &.amount-item {
         float: right;
         padding-right: 20px;
         font-weight: bold;
+    }
+}
+
+.row-icon {
+    &:hover {
+        cursor: pointer;
     }
 }

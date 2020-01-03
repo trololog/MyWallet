@@ -22,7 +22,7 @@ export class Balance {
         this.calculateTotal();
     }
 
-    removeTransaction(id: Guid) {
+    removeTransaction(id: string) {
         const index = this.transactions.findIndex(t=> t.id === id);
 
         this.transactions.splice(index,1);
