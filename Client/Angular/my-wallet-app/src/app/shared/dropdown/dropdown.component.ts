@@ -1,5 +1,5 @@
 import { Component, Input, forwardRef, Output, EventEmitter  } from '@angular/core';
-import { DropdownItem } from './dropDownItem.model';
+import { DropdownItem } from './dropdownItem.model';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({

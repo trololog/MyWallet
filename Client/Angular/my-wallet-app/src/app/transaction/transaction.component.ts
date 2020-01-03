@@ -46,6 +46,7 @@ export class TransactionComponent implements OnInit, OnDestroy {
       .subscribe(({ balance, transactionCount }) => {
           this.balance = balance;
           this.totalTransactions = transactionCount;
+          console.log(this.balance);
       });
     
     this.transactionService.getTransactions();

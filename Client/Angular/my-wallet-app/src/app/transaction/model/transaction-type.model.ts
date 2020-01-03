@@ -1,4 +1,4 @@
-import { DropdownItem } from '../../shared/dropdown/dropDownItem.model';
+import { DropdownItem } from '../../shared/dropdown/dropdownItem.model';
 
 export interface TransactionType extends DropdownItem {
 }

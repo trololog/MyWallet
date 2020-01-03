@@ -31,6 +31,7 @@
             <div class="transaction-list">
                 <ul>
                     <li *ngFor="let transaction of balance.getTransactions()">
+                        <span class="transaction-list-item link-item"></span>
                         <span class="transaction-list-item date-item">{{ transaction.date | date:'dd/MM/yyyy' }}</span>
                         <span class="transaction-list-item">{{ transaction.categoryDescription }}</span>
                         <span class="transaction-list-item desc-item">{{ transaction.concept }}</span>

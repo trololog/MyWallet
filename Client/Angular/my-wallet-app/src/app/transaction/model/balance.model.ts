@@ -45,6 +45,10 @@ export class Balance {
         return this.transactions;
     }
 
+    getTransactionNumber() {
+        return this.transactions.length;
+    }
+
     getTotal() {
         return this.total;
     }

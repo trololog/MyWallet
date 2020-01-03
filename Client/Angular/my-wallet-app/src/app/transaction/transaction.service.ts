@@ -15,7 +15,9 @@ export class TransactionService {
     private balance:Balance;
     private transactionsUpdated = new Subject<{ balance: Balance, transactionCount: number }>();
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {
+        this.balance = new Balance();
+    }
 
     getTransactionTypes() {
         this.transactionType.push(
@@ -88,10 +90,10 @@ export class TransactionService {
     }
 
     saveTransaction(transaction: Transaction) {
-        this.http.post<{transactionCount: number}>(environment.apiUrl + '/transaction', transaction)
+        this.http.post<{transactionId: string}>(environment.apiUrl + '/transaction', transaction)
             .subscribe(response => {
                 this.balance.addTransaction(transaction);
-                this.transactionsUpdated.next({ balance: this.balance, transactionCount: response.transactionCount});
+                this.transactionsUpdated.next({ balance: this.balance, transactionCount: this.balance.getTransactionNumber() });
             }, error => {
                 console.log(error);
             });
@@ -120,9 +122,8 @@ export class TransactionService {
     getTransactions() {
         this.http.get<{ transactions: Transaction[]}>(environment.apiUrl + '/transaction')
         .subscribe(response => {
-            console.log(response);
-            /*this.balance.addTransaction(transaction);
-            this.transactionsUpdated.next({ balance: this.balance, transactionCount: response.transactionCount});*/
+            this.balance.addTransactions(response.transactions);
+            this.transactionsUpdated.next({ balance: this.balance, transactionCount: this.balance.getTransactionNumber() });
         }, error => {
             console.log(error);
         });

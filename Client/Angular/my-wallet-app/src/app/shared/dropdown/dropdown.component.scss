@@ -1,6 +1,8 @@
+$background-color: #ffffff;
+
 .drop-down {
     border:0;
-    padding-bottom: 12px;
+    padding-bottom: 14px;
     padding-right:15px;
     padding-top:15px;
     font-size:12px;
@@ -9,6 +11,8 @@
     -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
+    background-color: $background-color;
+
 }
 
 .select-container {
