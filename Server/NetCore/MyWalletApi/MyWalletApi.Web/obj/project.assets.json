@@ -5157,19 +5157,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dmorales\\.nuget\\packages\\": {}
+    "/home/trololo/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\MyWalletApi.Web\\MyWalletApi.Web.csproj",
+      "projectUniqueName": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/MyWalletApi.Web/MyWalletApi.Web.csproj",
       "projectName": "MyWalletApi.Web",
-      "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\MyWalletApi.Web\\MyWalletApi.Web.csproj",
-      "packagesPath": "C:\\Users\\dmorales\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\MyWalletApi.Web\\obj\\",
+      "projectPath": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/MyWalletApi.Web/MyWalletApi.Web.csproj",
+      "packagesPath": "/home/trololo/.nuget/packages/",
+      "outputPath": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/MyWalletApi.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dmorales\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/trololo/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -5180,17 +5180,17 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Business\\Service\\MyWalletApi.Service\\MyWalletApi.Service.csproj": {
-              "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Business\\Service\\MyWalletApi.Service\\MyWalletApi.Service.csproj"
+            "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Business/Service/MyWalletApi.Service/MyWalletApi.Service.csproj": {
+              "projectPath": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Business/Service/MyWalletApi.Service/MyWalletApi.Service.csproj"
             },
-            "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\DataAccess\\MyWalletApi.Data.Interface\\MyWalletApi.Data.Interface.csproj": {
-              "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\DataAccess\\MyWalletApi.Data.Interface\\MyWalletApi.Data.Interface.csproj"
+            "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/DataAccess/MyWalletApi.Data.Interface/MyWalletApi.Data.Interface.csproj": {
+              "projectPath": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/DataAccess/MyWalletApi.Data.Interface/MyWalletApi.Data.Interface.csproj"
             },
-            "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\DataAccess\\MyWalletApi.Data.MongoDB\\MyWalletApi.Data.MongoDB.csproj": {
-              "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\DataAccess\\MyWalletApi.Data.MongoDB\\MyWalletApi.Data.MongoDB.csproj"
+            "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/DataAccess/MyWalletApi.Data.MongoDB/MyWalletApi.Data.MongoDB.csproj": {
+              "projectPath": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/DataAccess/MyWalletApi.Data.MongoDB/MyWalletApi.Data.MongoDB.csproj"
             },
-            "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj": {
-              "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj"
+            "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj": {
+              "projectPath": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj"
             }
           }
         }
@@ -5213,6 +5213,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5221,7 +5227,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

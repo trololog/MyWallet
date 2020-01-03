@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System;
 using MyWalletApi.Model.Interface;
 
 namespace MyWalletApi.Data.Interface.Repository 
