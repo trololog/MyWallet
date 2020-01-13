@@ -6,6 +6,8 @@ import { Balance } from './model/balance.model';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Transaction } from './model/transaction.model';
 import { Subscription } from 'rxjs';
+import { ModalService } from '../shared/modal/modal.service';
+import { TransactionModalComponent } from './transaction-modal/transaction-modal.component';
 
 @Component({
   selector: 'app-transaction',
@@ -17,7 +19,7 @@ export class TransactionComponent implements OnInit, OnDestroy {
 
   transactionForm: FormGroup;
 
-  constructor(private transactionService: TransactionService) { }
+  constructor(private transactionService: TransactionService, private modalService: ModalService) { }
   transactionTypes: TransactionType[];
   transactionCategories: TransactionCategory[];
   filteredCategories: TransactionCategory[];
@@ -48,7 +50,7 @@ export class TransactionComponent implements OnInit, OnDestroy {
           this.totalTransactions = transactionCount;
           console.log(this.balance);
       });
-    
+
     this.transactionService.getTransactions();
   }
 
@@ -71,6 +73,7 @@ export class TransactionComponent implements OnInit, OnDestroy {
   }
 
   onAddTransaction() {
+    //todo: refactor this part into the service
     const dateElements = this.getControlValue("date").split("/");
     const transaction: Transaction = {
       id: null,
@@ -81,12 +84,16 @@ export class TransactionComponent implements OnInit, OnDestroy {
       date: new Date(`${ dateElements[2] }-${ dateElements[1] }-${ dateElements[0] }`)
     };
 
-    this.transactionService.saveTransaction(transaction);    
+    this.transactionService.saveTransaction(transaction);
     this.resetForm();
   }
 
   onDeleteTransaction(transaction: Transaction) {
     this.transactionService.deleteTransaction(transaction.id);
+  }
+
+  onEditTransaction() {
+    this.modalService.openModal(TransactionModalComponent);
   }
 
   getAmountValue(value: number, type: string) {
@@ -102,13 +109,13 @@ export class TransactionComponent implements OnInit, OnDestroy {
     .find(t=> t.code === category)
       .value;
   }
-  
+
   setAmountClass(item:string) {
     const valueNumber = parseFloat(item);
     return "transaction-list-item number " + (valueNumber >= 0 ? "positive-amount" : "negative-amount");
   }
 
-  
+
 
   displaySymbol(amount: number) {
     if(amount > 0 ) {

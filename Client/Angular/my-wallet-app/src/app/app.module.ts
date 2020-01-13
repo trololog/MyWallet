@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TransactionModalComponent } from './transaction/transaction-modal/transaction-modal.component';
+import { ModalComponent } from './shared/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     SavingsTrackerComponent,
     TransactionComponent,
     MasterDataComponent,
-    FooterComponent
+    FooterComponent,
+    TransactionModalComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     SharedModule
   ],
+  entryComponents: [ModalComponent, TransactionModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

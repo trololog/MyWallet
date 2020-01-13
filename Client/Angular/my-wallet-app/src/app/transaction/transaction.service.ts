@@ -5,15 +5,14 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Balance } from './model/balance.model';
 import { Transaction } from './model/transaction.model';
 import { environment } from '../../environments/environment';
-import { Subject }  from 'rxjs';
-import { Guid } from 'guid-typescript';
+import { BehaviorSubject }  from 'rxjs';
 
 @Injectable()
 export class TransactionService {
     private transactionType: TransactionType[] = [];
     private transactionCategories: TransactionCategory[] = [];
     private balance:Balance;
-    private transactionsUpdated = new Subject<{ balance: Balance, transactionCount: number }>();
+    private transactionsUpdated = new BehaviorSubject<{ balance: Balance, transactionCount: number }>({balance:null,transactionCount:0});
 
     constructor(private http: HttpClient) {
         this.balance = new Balance();
@@ -29,7 +28,7 @@ export class TransactionService {
                 code: "2",
                 value: "Expense"
             });
-            
+
         return this.transactionType;
     }
 
@@ -86,7 +85,7 @@ export class TransactionService {
     }
 
     getTransactionsUpdatedListener() {
-        return this.transactionsUpdated.asObservable();
+        return this.transactionsUpdated;
     }
 
     saveTransaction(transaction: Transaction) {
@@ -109,7 +108,7 @@ export class TransactionService {
             })
     }
 
-    deleteTransaction(id : Guid) {
+    deleteTransaction(id : string) {
         this.http.delete<{transactionCount: number}>(environment.apiUrl)
             .subscribe(response => {
                 this.balance.removeTransaction(id);
