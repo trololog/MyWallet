@@ -127,4 +127,16 @@ export class TransactionService {
             console.log(error);
         });
     }
+
+    addTest(file: File) {
+      const postData = new FormData();
+
+      postData.append('file', file, 'test file');
+      const url = 'http://localhost:3001/api/mantenimiento/upload/cubsotemplate'
+
+      this.http.post<{message:string}>(url,postData)
+      .subscribe(response=> {
+        console.log(response);
+      })
+    }
 }

@@ -18,6 +18,7 @@ import { TransactionModalComponent } from './transaction-modal/transaction-modal
 export class TransactionComponent implements OnInit, OnDestroy {
 
   transactionForm: FormGroup;
+  form: FormGroup;
 
   constructor(private transactionService: TransactionService, private modalService: ModalService) { }
   transactionTypes: TransactionType[];
@@ -44,6 +45,10 @@ export class TransactionComponent implements OnInit, OnDestroy {
       'date': new FormControl('', [Validators.required])
     });
 
+    this.form = new FormGroup({
+      'file': new FormControl(null)
+    });
+
     this.transactionSubs = this.transactionService.getTransactionsUpdatedListener()
       .subscribe(({ balance, transactionCount }) => {
           this.balance = balance;
@@ -52,6 +57,16 @@ export class TransactionComponent implements OnInit, OnDestroy {
       });
 
     this.transactionService.getTransactions();
+  }
+
+  onFilePicked(event: Event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.form.patchValue({'file': file});
+    this.form.get('file').updateValueAndValidity();
+  }
+
+  onSave() {
+    this.transactionService.addTest(this.form.value.file);
   }
 
   ngOnDestroy() {

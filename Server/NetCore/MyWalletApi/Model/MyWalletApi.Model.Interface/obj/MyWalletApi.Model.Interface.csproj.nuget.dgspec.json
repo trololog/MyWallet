@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj": {}
+    "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj": {}
   },
   "projects": {
-    "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj": {
+    "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj",
+        "projectUniqueName": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj",
         "projectName": "MyWalletApi.Model.Interface",
-        "projectPath": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Model/MyWalletApi.Model.Interface/MyWalletApi.Model.Interface.csproj",
-        "packagesPath": "/home/trololo/.nuget/packages/",
-        "outputPath": "/home/trololo/Documents/GitHub/MyWallet/Server/NetCore/MyWalletApi/Model/MyWalletApi.Model.Interface/obj/",
+        "projectPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\MyWalletApi.Model.Interface.csproj",
+        "packagesPath": "C:\\Users\\dmorales\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dmorales\\Documents\\GitHub\\MyWallet\\Server\\NetCore\\MyWalletApi\\Model\\MyWalletApi.Model.Interface\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/trololo/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\dmorales\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +55,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
